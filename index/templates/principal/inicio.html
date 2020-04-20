@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Formulario</title>
+    <link href="estilos/style_inicio.css" rel="stylesheet">
+  </head>
+  <body>
+    <form method="POST" action="return.html" class="formulario">
+      <h1>Formulario de Turno</h1>
+        <label>Nombre:</label><input type=data id="1">
+        <br><br>
+        <label>Grupo:</label>
+        <select>
+            {% for i in grp %}
+            {{ grp }}
+            {% endfor %}
+        </select>
+        <br><br>
+        <label>Division:</label><input type=data>
+    </form>
+  </body>
+</html>
