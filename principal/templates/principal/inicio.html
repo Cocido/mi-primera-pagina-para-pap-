@@ -11,13 +11,20 @@
         <label>Nombre:</label><input type=data id="1">
         <br><br>
         <label>Grupo:</label>
-        <select>
+        <select class="grpS">
             {% for i in grp %}
-            {{ grp }}
+              <option value=i.id_grp>{{ i.numero_grp }}</option>
             {% endfor %}
         </select>
         <br><br>
-        <label>Division:</label><input type=data>
+        <label>Division:</label>
+        <select class="divS">
+            {% for i in div %}
+              <option value=i.id_div>{{ i.descripcion }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <input type="submit" value="Enviar">
     </form>
   </body>
 </html>

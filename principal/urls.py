@@ -21,4 +21,5 @@ from . import views
 
 urlpatterns = [
     path('', views.inicio, name='inicio'),
+    path('retorno/', views.retorno, name='retorno'),
 ]

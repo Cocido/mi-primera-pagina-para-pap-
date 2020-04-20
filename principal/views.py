@@ -7,4 +7,8 @@ from .models import personas, grupo, division
 
 def inicio(request):
     grp = grupo.objects.all()
-    return render(request, 'index/inicio.html',{})
+    div = division.objects.all()
+    return render(request, 'principal/inicio.html',{'grp': grp, 'div': div})
+
+def retorno(request):
+    return render(request, 'principal/retorno.html',{})
