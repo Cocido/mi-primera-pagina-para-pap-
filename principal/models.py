@@ -4,14 +4,16 @@ from django.db import models
 
 class grupo(models.Model):
     id_grp = models.AutoField(primary_key = True, null = False)
-    numero_grp = models.IntegerField()
+    nombre_grp = models.CharField(max_length = 30)
+    numero_integrantes = models.IntegerField()
 
-class division(models.Model):
-    id_div = models.AutoField(primary_key = True, blank = False, null = False)
+class comision(models.Model):
+    id_com = models.AutoField(primary_key = True, blank = False, null = False)
     descripcion = models.CharField(max_length = 4)
 
 class personas(models.Model):
     id_personas = models.AutoField(primary_key = True, blank = False, null = False)
-    nombre = models.CharField(max_length = 50)
+    nombre = models.CharField(max_length = 20)
+    apellido = models.CharField(max_length = 20)
     grupo = models.ForeignKey(grupo, on_delete = models.CASCADE)
-    division = models.ForeignKey(division, on_delete = models.CASCADE)
+    comision = models.ForeignKey(comision, on_delete = models.CASCADE)

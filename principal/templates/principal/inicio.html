@@ -6,21 +6,70 @@
     <link href="estilos/style_inicio.css" rel="stylesheet">
   </head>
   <body>
-    <form method="POST" action="return.html" class="formulario">
+    <form method="POST" action="retorno/" class="formulario">
+        {% csrf_token %}
       <h1>Formulario de Turno</h1>
-        <label>Nombre:</label><input type=data id="1">
+      <br><br>
+      <label>Nombre del grupo:</label><input type="text" name="nombreTxt">
+      <br><br>
+        <table>
+          <tr>
+            <th scope="row">Integrante</th>
+            <th>Apellido</th>
+            <th>Nombre</th>
+            <th>DNI</th>
+          </tr>
+          <tr>
+            <th>1</th>
+            <td><input type="text" name="nombreIntegrante1"></td>
+            <td><input type="text" name="apellidoIntegrante1"></td>
+            <td><input type="number" name="dniIntegrante1"></td>
+          </tr>
+          <tr>
+            <th>2</th>
+            <td><input type="text" name="nombreIntegrante2"></td>
+            <td><input type="text" name="apellidoIntegrante2"></td>
+            <td><input type="number" name="dniIntegrante2"></td>
+          </tr>
+          <tr>
+            <th>3</th>
+            <td><input type="text" name="nombreIntegrante3"></td>
+            <td><input type="text" name="apellidoIntegrante3"></td>
+            <td><input type="number" name="dniIntegrante3"></td>
+          </tr>
+          <tr>
+            <th>4</th>
+            <td><input type="text" name="nombreIntegrante4"></td>
+            <td><input type="text" name="apellidoIntegrante4"></td>
+            <td><input type="number" name="dniIntegrante4"></td>
+          </tr>
+          <tr>
+            <th>5</th>
+            <td><input type="text" name="nombreIntegrante5"></td>
+            <td><input type="text" name="apellidoIntegrante5"></td>
+            <td><input type="number" name="dniIntegrante5"></td>
+          </tr>
+          <tr>
+            <th>6</th>
+            <td><input type="text" name="nombreIntegrante6"></td>
+            <td><input type="text" name="apellidoIntegrante6"></td>
+            <td><input type="number" name="dniIntegrante6"></td>
+          </tr>
+        </table>
+
+        <label>:</label><input type="text" name="nombreTxt">
         <br><br>
         <label>Grupo:</label>
-        <select class="grpS">
+        <select name="grpS">
             {% for i in grp %}
-              <option value=i.id_grp>{{ i.numero_grp }}</option>
+              <option value={{ i.id_grp }}>{{ i.numero_grp }}</option>
             {% endfor %}
         </select>
         <br><br>
-        <label>Division:</label>
-        <select class="divS">
-            {% for i in div %}
-              <option value=i.id_div>{{ i.descripcion }}</option>
+        <label>Comision:</label>
+        <select name="divS">
+            {% for i in com %}
+              <option value={{ i.id_com }}>{{ i.descripcion }}</option>
             {% endfor %}
         </select>
         <br><br>
